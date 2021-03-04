@@ -1,14 +1,17 @@
 <template>
-  <TopNav />
+  <TheHeader />
   <router-view />
+  <TheFooter />
 </template>
 
 <script>
-import TopNav from '@/ui/views/nav/TheTopNav.vue'
+import TheHeader from '@/ui/views/header/TheHeader.vue'
+import TheFooter from '@/ui/views/footer/TheFooter.vue'
 
 export default {
   components: {
-    TopNav
+    TheHeader,
+    TheFooter
   }
 }
 </script>

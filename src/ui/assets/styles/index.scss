@@ -1,2 +1,12 @@
+@import 'base/reset';
+
 @import 'tokens/tokens';
-@import 'base/base';
+@import 'abstracts/mixin.responsive';
+
+@import 'base/typography';
+@import 'base/default';
+@import 'base/headings';
+
+@import 'layout/page';
+
+@import 'utils/spacing';

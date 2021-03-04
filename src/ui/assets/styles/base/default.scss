@@ -1,0 +1,18 @@
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+p::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+@at-root ul#{&} {
+  list-style: none;
+  padding-left: 0;
+}

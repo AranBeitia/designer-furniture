@@ -1,0 +1,87 @@
+$weights: (
+  regular: var(--font-weight-regular),
+  bold: var(--font-weight-bold)
+);
+
+@mixin apply-text($text) {
+  font-size: nth($text, 1) !important;
+  line-height: nth($text, 2) !important;
+  font-weight: map_get($weights, nth($text, 3)) !important;
+}
+
+body {
+  font-size: var(--font-size-base);
+  line-height: 28px;
+  color: var(--font-color-base);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include is-mobile {
+    font-size: var(--font-size-base-mobile);
+    line-height: 24px;
+  }
+}
+
+$heading-texts: (
+  'heading-main': (
+    'desktop': (40px 46px 'bold'),
+    'mobile': (20px 26px 'bold'),
+  ),
+  'heading-secondary': (
+    'desktop': (30px 35px 'bold'),
+    'mobile': (26px 32px 'bold'),
+  ),
+    'heading-tertiary': (
+    'desktop': (20px 26px 'bold'),
+    'mobile': (18px 22px 'bold'),
+  )
+);
+
+$body-texts: (
+  'body-main': (
+    'desktop': (18px 27px 'regular'),
+    'mobile': (16px 24px 'regular'),
+  ),
+  'body-main-bold': (
+    'desktop': (18px 27px 'bold'),
+    'mobile': (16px 24px 'bold'),
+  ),
+  'body-secondary': (
+    'desktop': (16px 22px 'regular'),
+    'mobile': (14px 20px 'regular'),
+  ),
+  'body-secondary-bold': (
+    'desktop': (16px 24px 'bold'),
+    'mobile': (14px 21px 'bold'),
+  ),
+);
+
+$other-texts: (
+  'tag': (
+    'desktop': (14px 18px 'regular'),
+    'mobile': (13px 18px 'regular'),
+  )
+);
+
+$texts: map-merge(
+  $heading-texts,
+  map-merge(
+    $body-texts,
+    $other-texts
+  )
+);
+
+@each $text, $value  in $texts {
+  $text-desktop: map-get($value, 'desktop');
+  $text-mobile: map-get($value, 'mobile');
+
+  .text-#{$text},
+  %text-#{$text} {
+    @include apply-text($text-desktop);
+      
+    @include is-mobile {
+      @include apply-text($text-mobile);
+    }
+  }
+}

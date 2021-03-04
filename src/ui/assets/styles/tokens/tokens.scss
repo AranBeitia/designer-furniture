@@ -1,9 +1,28 @@
 :root {
+  // COLORS
   --color-primary: #b25009;
   --color-secondary: #eec846;
   --color-tertiary: #0c81c3;
 
   --color-black: #000000;
-  --color-grey: #8a867f;
+  --color-grey: #595959;
+  --color-grey-light: #f7f7f7;
   --color-white: #ffffff;
+
+  // FONTS
+  --font-size-base: 16px;
+  --font-size-base-mobile: 14px;
+  --font-color-base: var(--color-grey);
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  //BREAKPOINTS
+  --breakpoint-xs: 600px;
+  --breakpoint-sm: 1024px;
+  --breakpoint-md: 1440px;
+  --breakpoint-lg: 1920px;
+
+  //  MAIN WIDTH
+  --width-desktop: 90%;
 }
