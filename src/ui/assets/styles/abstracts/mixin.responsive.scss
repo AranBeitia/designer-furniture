@@ -1,15 +1,16 @@
+//BREAKPOINTS
+$breakpoint-xs: 480px;
+$breakpoint-sm: 786px;
+$breakpoint-md: 1440px;
+
 @mixin is-mobile() {
-  @media screen and (max-width: var(--breakpoint-xs)) { @content; }
+  @media screen and (max-width: $breakpoint-xs) { @content; }
 }
 
-@mixin is-tablet-landscape() {
-  @media screen and (max-width: var(--breakpoint-sm)) { @content; }
+@mixin is-tablet() {
+  @media screen and (max-width: $breakpoint-sm) { @content; }
 }
 
 @mixin is-desktop() {
-  @media screen and (max-width: var(--breakpoint-md)) { @content; }
-}
-
-@mixin is-big-desktop() {
-  @media screen and (min-width: var(--breakpoint-lg)) { @content; }
+  @media screen and (max-width: $breakpoint-md) { @content; }
 }

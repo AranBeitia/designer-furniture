@@ -1,10 +1,10 @@
 <template>
   <section class="hero">
     <div class="page-container">
-      <aside class="hero__info">
+      <!-- <aside class="hero__info">
         <h1>Lorem ipsum</h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-      </aside>
+      </aside> -->
     </div>
   </section>
 </template>

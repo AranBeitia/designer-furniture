@@ -10,12 +10,10 @@ $weights: (
 }
 
 body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   font-size: var(--font-size-base);
   line-height: 28px;
   color: var(--font-color-base);
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   @include is-mobile {
     font-size: var(--font-size-base-mobile);
