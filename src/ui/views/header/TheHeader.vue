@@ -19,18 +19,18 @@
         </div>
       </div>
     </div>
-    <TopNav id="menu" class="menu"/>
+    <!-- <TopNav id="menu" class="menu"/> -->
     <router-link :to="{ name: 'Login' }" class="sign-out">Sign out</router-link>
   </nav>
 </template>
 
 <script>
 // import menu from '@/ui/views/header/menu.js'
-import TopNav from '@/ui/views/nav/TheTopNav.vue'
+// import TopNav from '@/ui/views/nav/TheTopNav.vue'
 
 export default {
   components: {
-    TopNav
+
   },
   // methods: {
   //   menu
