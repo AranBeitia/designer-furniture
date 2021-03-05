@@ -1,0 +1,47 @@
+$color: #0c81c3;
+$full-size: 100%;
+$border-radius: 3rem;
+.button {
+  display: inline-block;
+  position: relative;
+  width: $full-size;
+  padding: 1.5rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+  border-radius: $border-radius;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .3s;
+  z-index: 1;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $full-size;
+  }
+  &:after {
+    width: $full-size;
+    background-color: $color;
+    border-radius: $border-radius;
+    z-index: -2;
+  }
+
+  &:before {
+    width: 0;
+    background-color: darken($color, 15%);
+    transition: all .3s;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: var(--color-white);
+
+    &:before {
+      width: $full-size;
+    }
+  }
+}

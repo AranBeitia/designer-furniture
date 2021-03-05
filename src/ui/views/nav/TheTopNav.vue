@@ -1,20 +1,26 @@
 <template>
-  <nav class="nav">
-    <router-link to="/">Products</router-link>
-    <router-link :to="{ name: 'About' }">About us</router-link>
-    <router-link to="/">Contact</router-link>
-    <router-link to="/">Stores</router-link>
+  <nav class="menu">
+    <router-link to="/" class="menu__item">Products</router-link>
+    <router-link to="/" class="menu__item">About us</router-link>
+    <router-link to="/" class="menu__item">Contact</router-link>
+    <router-link to="/" class="menu__item">Stores</router-link>
   </nav>
 </template>
 
 <style lang="scss" scoped>
-.nav {
-  padding: 30px;
+.menu {
+  padding: 0 3rem;
 
-  a {
+  &__item {
     font-weight: bold;
     color: var(--color-primary);
     padding: 0 1rem;
+
+    @include is-tablet {
+      color: var(--color-white);
+      padding: 3rem;
+      font-size: 3rem;
+    }
 
     &.router-link-exact-active {
       color: var(--color-secondary);
