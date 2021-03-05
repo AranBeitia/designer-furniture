@@ -7,6 +7,10 @@ body {
   margin: 0;
 }
 
+p {
+  padding: 1rem 0;
+}
+
 p::selection {
   background-color: var(--color-primary);
   color: var(--color-white);

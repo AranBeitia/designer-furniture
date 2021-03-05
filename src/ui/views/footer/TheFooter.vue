@@ -14,7 +14,7 @@
   .footer {
     padding: 3rem 0;
     color: var(--color-white);
-    background-color: var(--color-grey);
+    background-color: var(--color-grey-dark);
   }
 
   .legal {

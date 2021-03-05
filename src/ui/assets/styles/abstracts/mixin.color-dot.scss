@@ -1,0 +1,41 @@
+$color: (
+  'coffee': var(--color-coffee),
+  'dark': var(--color-black),
+  'grey': var(--color-grey-dark),
+  'orange': var(--color-orange),
+  'lemon': var(--color-lemon)
+);
+
+@function color($name) {
+  @return (map_get($color, $name));
+}
+
+@mixin skin-dot($color: color('coffee')) {
+  background-color: $color !important;
+}
+
+.dot {
+  &#{&}-coffee {
+    @include skin-dot(color('coffee'))
+  }
+
+  &#{&}-dark {
+    @include skin-dot(color('dark'))
+  }
+
+  &#{&}-grey {
+    @include skin-dot(color('grey'))
+  }
+
+  &#{&}-orange {
+    @include skin-dot(color('orange'))
+  }
+
+  &#{&}-lemon {
+    @include skin-dot(color('lemon'))
+  }
+
+  &#{&}.--active {
+    border: .2rem solid var(--color-black);
+  }
+}
