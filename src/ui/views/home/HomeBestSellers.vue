@@ -1,7 +1,7 @@
 <template>
   <section class="best-sellers">
     <div class="page-container">
-      <h2>Best Sellers</h2>
+      <h2 class="best-sellers__title">Best Sellers</h2>
       <div class="grid-3-to-1">
         <article class="best-sellers__card">
           <img src="~@/ui/assets/images/table.png" title="Table" alt="Table" class="best-sellers__image">
@@ -47,6 +47,10 @@ export default {
   .best-sellers {
     padding: 5rem 0;
     background-color: var(--color-grey-light);
+
+    &__title {
+      padding-bottom: 2rem;
+    }
 
     &__card {
       display: flex;
