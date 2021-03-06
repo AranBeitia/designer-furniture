@@ -3,26 +3,43 @@
     <router-link :to="{ name: 'Home' }">
       <img src="~@/ui/assets/images/logo_black.png" alt="logo" title="logo">
     </router-link>
-    <TopNav id="menu" class="header__nav"/> <!-- --active -->
-    <button @click="toggleMenu" class="toggle" id="burguer"><img src="~@/ui/assets/images/icon-bars.svg" class="icon"></button>
+    <TopNav
+      v-if="menuVisible"
+      :isVisible="isVisible"/> <!-- --active -->
+    <button
+      @click="toggleMenu"
+      class="toggle"
+      :class="{ '--active': isVisible }"
+    ><img src="~@/ui/assets/images/icon-bars.svg" class="icon"></button>
     <router-link :to="{ name: 'Signin' }" class="sign-out">Sign in</router-link>
+    <span>{{ userName }}</span>
   </header>
 </template>
 
 <script>
-// import menu from '@/ui/views/header/menu.js'
+import { mapGetters } from 'vuex'
 import TopNav from '@/ui/views/nav/TheTopNav.vue'
 
 export default {
   components: {
     TopNav
   },
+  props: {
+    menuVisible: {
+      type: Boolean
+    }
+  },
+  data () {
+    return { 
+      isVisible: false
+    }
+  },
+  computed: {
+    ...mapGetters(['userName'])
+  },
   methods: {
     toggleMenu () {
-      const button = document.getElementById('burguer')
-      const menu = document.getElementById('menu')
-      menu.classList.toggle('--active')
-      button.classList.toggle('--active')
+      this.isVisible = !this.isVisible
     }
   }
 }

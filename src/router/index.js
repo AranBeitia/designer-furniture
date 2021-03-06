@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import loginStore from '@/store/login.js'
+import signinStore from '@/store/index.js'
 
 const routes = [
   {
@@ -7,30 +7,22 @@ const routes = [
     component: () => import(/* webpackChunkName: "authFrame" */ '@/ui/views/auth/AuthFrame.vue'),
     children: [
       {
-        path: '/login',
-        name: 'Login',
-        meta: { publicArea: true },
-        component: () => import(/* webpackChunkName: "loginPage" */ '@/ui/views/auth/login/LoginPage.vue')
+        path: '/signin',
+        name: 'Signin',
+        meta: { publicArea: true, onlyNotSiggned: true },
+        component: () => import(/* webpackChunkName: "signin" */ '@/ui/views/auth/signin/SigninPage.vue')
       }
     ]
   },
   {
-    path: '/internal',
-    name: 'Internal',
-    component: () => import(/* webpackChunkName: "internal" */ '@/ui/views/app/Internal.vue'),
+    path: '/app',
+    component: () => import(/* webpackChunkName: "appFrame" */ '@/ui/views/app/App.vue'),
     children: [
       {
         path: '/',
         name: 'Home',
+        meta: { publicArea: true },
         component: () => import(/* webpackChunkName: "home" */ '@/ui/views/home/HomePage.vue')
-      },
-      {
-        path: '/signin',
-        name: 'Signin',
-        // route level code-splitting
-        // this generates a separate chunk (signin.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "signin" */ '@/ui/views/signin/SigninPage.vue')
       }
     ]
   },
@@ -43,21 +35,21 @@ const router = createRouter({
 
 function _authenticationGuard(to, from, next) {
   const publicArea = to.matched.some(record => record.meta.publicArea)
-  const loginRequired = !publicArea && !loginStore.isLogged()
-  const redirectToPrivateArea = loginStore.isLogged() && publicArea
+  const onlyNotSigned = to.matched.some(record => record.meta.onlyNotSigned)
+  const SigninRequired = !publicArea && !signinStore.getters.isSigned
+  const redirectToHome = signinStore.getters.isSigned && onlyNotSigned
 
-  if (loginRequired) {
+  if (SigninRequired) {
     next({
-      name: 'Login',
+      name: 'Signin',
       query: { redirect: to.fullPath }
     })
-  } else if (redirectToPrivateArea) {
+  } else if (redirectToHome) {
     next({
       name: 'Home'
     })
   } else next()
 }
-
 
 router.beforeEach(_authenticationGuard)
 

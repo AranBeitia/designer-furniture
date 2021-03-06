@@ -1,12 +1,22 @@
 <template>
+<div class="header__nav" :class="{ '--active': isVisible }">
   <nav class="menu">
     <router-link to="/" class="menu__item">Products</router-link>
     <router-link to="/" class="menu__item">About us</router-link>
     <router-link to="/" class="menu__item">Contact</router-link>
     <router-link to="/" class="menu__item">Stores</router-link>
   </nav>
+  </div>
 </template>
-
+<script>
+export default {
+  props: {
+    isVisible: {
+      type: Boolean
+    }
+  }
+}
+</script>
 <style lang="scss" scoped>
 .menu {
   padding: 0 3rem;

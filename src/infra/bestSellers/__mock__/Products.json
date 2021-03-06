@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "Product 1",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos laboriosam a voluptas minus temporibus error.",
+    "colors": {
+        "option1": "grey",
+        "option2": "black"
+      },
+    "image": "url.jpg"
+  }
+]

@@ -3,7 +3,7 @@
     <article class="signin__card">
       <button @click="backBehaviour"> - go back</button>
       <h1>Sign in</h1>
-      <form action="">
+      <form action="" v-on:submit.prevent="onSubmit">
         <div class="signin__input-group">
           <label
             for="name"
@@ -28,17 +28,22 @@
             class="signin__input"
           />
         </div>
-        <button class="button signin__button">Sign in</button>
+        <button @click="signin"  class="button signin__button">Sign in</button>
       </form>
     </article>
   </main>
 </template>
 
 <script>
+import signinStore from '@/store/index.js'
 export default {
   methods: {
     backBehaviour () {
       this.$router.go(-1)
+    },
+    signin () {
+      signinStore.commit('setLoggedUser', { userName: 'aran' })
+      this.$router.push({ name: 'Home' })
     }
   }
 }

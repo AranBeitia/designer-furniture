@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "homepage": "https://github.com/AranBeitia/designer-furniture#readme",
   "private": true,
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/AranBeitia/designer-furniture.git"
-    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AranBeitia/designer-furniture.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -19,7 +19,7 @@
     "register-service-worker": "^1.7.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0"
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
