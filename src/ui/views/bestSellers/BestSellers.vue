@@ -3,7 +3,18 @@
     <div class="page-container">
       <h2 class="best-sellers__title">Best Sellers</h2>
       <div class="grid-3-to-1">
-        <BestProduct/>
+        <article class="best-sellers__card">
+          <img src="~@/ui/assets/images/table.png" title="Chair grey" alt="Chair grey" class="best-sellers__image">
+          <div>
+            <h3>Product 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos laboriosam a voluptas minus temporibus error.</p>
+            <small class="best-sellers__tag text-tag">Colores disponibles</small>
+              <ul class="dot-wrapper">
+                <li class="[ dot dot-coffee ] --active"></li>
+                <li class="[ dot dot-dark ]"></li>
+              </ul>
+          </div>
+        </article>
         <article class="best-sellers__card">
           <img src="~@/ui/assets/images/chair_grey.png" title="Chair grey" alt="Chair grey" class="best-sellers__image">
           <div>
@@ -32,15 +43,7 @@
     </div>
   </section>
 </template>
-<script>
-import BestProduct from './BestSellersProduct'
 
-export default {
-  components: {
-    BestProduct
-  }
-}
-</script>
 <style lang="scss" scoped>
   .best-sellers {
     padding: 5rem 0;
