@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "Product 1",
+    "alt": "Table",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos laboriosam a voluptas minus temporibus error.",
+    "colors": {
+      "option1": "rgba(159, 120, 75, 1)",
+      "option2": "rgba(0, 0, 0, 1)"
+    },
+    "image": "http://cdn.arantzabeitia.es/table.png"
+  },
+  {
+    "id": 2,
+    "title": "Product 2",
+    "alt": "Chair grey",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos laboriosam a voluptas minus temporibus error.",
+    "colors": {
+      "option1": "rgba(146, 146, 146, 1)",
+      "option2": "rgba(181, 108, 57, 1)"
+    },
+    "image": "http://cdn.arantzabeitia.es/chair_grey.png"
+  },
+  {
+    "id": 3,
+    "title": "Product 3",
+    "alt": "Chair Yellow",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos laboriosam a voluptas minus temporibus error.",
+    "colors": {
+      "option1": "rgba(234, 221, 111, 1)",
+      "option2": "rgba(146, 146, 146, 1)"
+    },
+    "image": "http://cdn.arantzabeitia.es/chair_yellow.png"
+  }
+]
