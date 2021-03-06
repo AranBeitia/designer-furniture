@@ -2,21 +2,21 @@
   <main>
     <HomeHero/>
     <HomeProducts/>
-    <HomeBestSellers/>
+    <BestSellers/>
   </main>
 </template>
 
 <script>
 import HomeHero from '@/ui/views/home/HomeHero.vue'
 import HomeProducts from '@/ui/views/home/HomeProducts.vue'
-import HomeBestSellers from '@/ui/views/home/HomeBestSellers.vue'
+import BestSellers from '@/ui/views/bestSellers/BestSellers.vue'
 
 export default {
   name: 'Home',
   components: {
     HomeHero,
     HomeProducts,
-    HomeBestSellers
+    BestSellers
   }
 }
 </script>

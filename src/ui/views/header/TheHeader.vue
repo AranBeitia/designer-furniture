@@ -4,7 +4,7 @@
       <img src="~@/ui/assets/images/logo_black.png" alt="logo" title="logo">
     </router-link>
     <TopNav id="menu" class="header__nav"/> <!-- --active -->
-    <button class="toggle"><img src="~@/ui/assets/images/icon-bars.svg" class="icon"></button>
+    <button @click="toggleMenu" class="toggle" id="burguer"><img src="~@/ui/assets/images/icon-bars.svg" class="icon"></button>
     <router-link :to="{ name: 'Signin' }" class="sign-out">Sign in</router-link>
   </header>
 </template>
@@ -17,9 +17,14 @@ export default {
   components: {
     TopNav
   },
-  // methods: {
-  //   menu
-  // }
+  methods: {
+    toggleMenu () {
+      const button = document.getElementById('burguer')
+      const menu = document.getElementById('menu')
+      menu.classList.toggle('--active')
+      button.classList.toggle('--active')
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -41,6 +46,7 @@ export default {
 
     @include is-tablet {
     display: block;
+    z-index: 1;
   }
 }
 
