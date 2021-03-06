@@ -28,8 +28,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$size: 3rem;
+$full-size: 100%;
 .menu {
-  padding: 0 3rem;
+  padding: 0 $size * 2;
 
   @include is-tablet {
     display: none;
@@ -40,21 +42,20 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      width: $full-size;
+      height: $full-size;
       background-color: var(--color-primary);
-      animation: scale 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
   }
 
   &__item {
     font-weight: bold;
     color: var(--color-primary);
-    padding: 0 1rem;
+    padding: 0 $size;
 
     @include is-tablet {
       color: var(--color-white);
-      padding: 3rem;
+      padding: $size;
       font-size: 3.5rem;
     }
   }
