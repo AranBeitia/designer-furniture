@@ -110,7 +110,7 @@ export default {
   }
 
   .sign-in {
-    color: blue;
+    color: var( --color-tertiary);
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: underline;
