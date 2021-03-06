@@ -10,7 +10,10 @@
             <h3>Product 2</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos laboriosam a voluptas minus temporibus error.</p>
             <small class="best-sellers__tag text-tag">Colores disponibles</small>
-            <ColorDot/>
+              <ul class="dot-wrapper">
+                <li class="[ dot dot-grey ] --active"></li>
+                <li class="[ dot dot-orange ]"></li>
+              </ul>
           </div>
         </article>
         <article class="best-sellers__card">
@@ -19,7 +22,10 @@
             <h3>Product 3</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos laboriosam a voluptas minus temporibus error.</p>
             <small class="best-sellers__tag text-tag">Colores disponibles</small>
-            <ColorDot/>
+              <ul class="dot-wrapper">
+                <li class="[ dot dot-lemon ] --active"></li>
+                <li class="[ dot dot-grey ]"></li>
+              </ul>
           </div>
         </article>
       </div>
@@ -28,12 +34,10 @@
 </template>
 <script>
 import BestProduct from './BestSellersProduct'
-import ColorDot from '@/ui/components/ColorDot'
 
 export default {
   components: {
-    BestProduct,
-    ColorDot
+    BestProduct
   }
 }
 </script>
@@ -73,4 +77,21 @@ export default {
       color: var(--color-grey);
     }
   }
+
+.dot-wrapper {
+  display: flex;
+  padding: 1rem 0;
+}
+
+.dot {
+  $size: 2rem;
+  display: block;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
 </style>

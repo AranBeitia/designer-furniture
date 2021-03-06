@@ -4,7 +4,7 @@ export default {
     user: {}
   },
   mutations: {
-    setLoggedUser(state, user) {
+    setSignedUser(state, user) {
       state.isSigned = true
       state.user = user
     }

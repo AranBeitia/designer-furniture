@@ -1,22 +1,20 @@
-import { createStore } from 'vuex'
 import ProductsRepository from '@/infra/bestSellers/ProductsRepository'
-
-export default createStore({
-  namespaced: true,
+export default {
   state: {
-    products: []
+    products: [],
+    namespaced: true
   },
   mutations: {
-    setProduct(state, products) {
-      state.products = products
+    setProduct(state, product) {
+      state.products = product
     }
   },
   actions: {
-    async getProduct ({ commit }) {
+    async getProduct({ commit }) {
       const dataProduct = await ProductsRepository.getProducts()
       commit('setProduct', dataProduct)
     }
   },
-  modules: {
+  getters: {
   }
-})
+}

@@ -42,7 +42,7 @@ export default {
       this.$router.go(-1)
     },
     signin () {
-      signinStore.commit('setLoggedUser', { userName: 'aran' })
+      signinStore.commit('setSignedUser', { userName: 'aran' })
       this.$router.push({ name: 'Home' })
     }
   }
