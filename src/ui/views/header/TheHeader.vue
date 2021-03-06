@@ -1,18 +1,41 @@
 <template>
   <header class="header page-container">
-    <router-link :to="{ name: 'Home' }">
-      <img src="~@/ui/assets/images/logo_black.png" alt="logo" title="logo">
-    </router-link>
-    <TopNav
-      v-if="menuVisible"
-      :isVisible="isVisible"/> <!-- --active -->
-    <button
-      @click="toggleMenu"
-      class="toggle"
-      :class="{ '--active': isVisible }"
-    ><img src="~@/ui/assets/images/icon-bars.svg" class="icon"></button>
-    <router-link :to="{ name: 'Signin' }" class="sign-out">Sign in</router-link>
+    <div class="header__nav">
+      <router-link :to="{ name: 'Home' }">
+        <img
+          src="~@/ui/assets/images/logo_black.png"
+          alt="logo"
+          title="logo"
+          class="header__logo"
+          :class="{ '--hidden': isActived }"
+        />
+        <img
+          src="~@/ui/assets/images/logo_white.png"
+          alt="logo"
+          title="logo"
+          class="header__logo --hidden"
+          :class="{ '--active': isActived }"
+        />
+      </router-link>
+      <TopNav
+        v-if="menuVisible"
+        :isActived="isActived"/>
+    </div>
     <span>{{ userName }}</span>
+    <div class="header__cta">
+      <button
+        @click="toggleMenu"
+        class="toggle"
+        :class="{ '--active': isActived }"
+      >
+        <i class="icon woo-icon-bars" :class="{ 'woo-icon-cross': isActived }"></i>
+      </button>
+      <router-link
+        v-if="menuVisible"
+        :to="{ name: 'Signin' }"
+        class="sign-in"
+      >Sign in</router-link>
+    </div>
   </header>
 </template>
 
@@ -31,7 +54,7 @@ export default {
   },
   data () {
     return { 
-      isVisible: false
+      isActived: false
     }
   },
   computed: {
@@ -39,61 +62,63 @@ export default {
   },
   methods: {
     toggleMenu () {
-      this.isVisible = !this.isVisible
+      this.isActived = !this.isActived
     }
   }
 }
 </script>
 <style lang="scss" scoped>
 .header {
-  @include flex(flex, start, center);
   padding: 2rem 0;
-
-  @include is-tablet {
-    justify-content: space-between;
-  }
-  
-  &__logo {
-    width: 10rem;
-  }
-
-.toggle {
-  display: none;
-  outline: none;
-
-    @include is-tablet {
-    display: block;
-    z-index: 1;
-  }
-}
+  @include flex(flex, between, center);
 
   &__nav {
-    margin-right: auto;
+    @include flex(flex, start, center);
+  }
 
-    @include is-tablet {
+  &__cta {
+    z-index: 1;
+  }
+
+  &__logo {
+    width: 10rem;
+
+    &.--hidden {
       display: none;
+    }
 
-      &.--active {
-        @include flex(flex, center, center);
-        flex-direction: column;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--color-primary);
-      }
+    &.--active {
+      display: block;
+      position: absolute;
+      top: 1;
+      left: 1;
+      z-index: 1;
     }
   }
 
-  .sign-out {
+  .toggle {
+    display: none;
+    outline: none;
+
+      @include is-tablet {
+      display: block;
+    }
+
+    .icon {
+      font-size: 4rem;
+    }
+  }
+
+  .sign-in {
+    color: blue;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+
     @include is-tablet {
       display: none;
     }
   }
 }
 
-.icon {
-  width: 4rem;
-}
 </style>

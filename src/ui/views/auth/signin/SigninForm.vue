@@ -1,9 +1,9 @@
 <template>
   <main class="signin">
     <article class="signin__card">
-      <button @click="backBehaviour"> - go back</button>
+      <button @click="backBehaviour" class="woo-icon-arrow">go back</button>
       <h1>Sign in</h1>
-      <form action="" v-on:submit.prevent="onSubmit">
+      <form v-on:submit.prevent="onSubmit">
         <div class="signin__input-group">
           <label
             for="name"
