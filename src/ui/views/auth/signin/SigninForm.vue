@@ -2,6 +2,7 @@
   <main class="signin">
     <article class="signin__card">
       <button @click="backBehaviour"> - go back</button>
+      {{ users }}
       <h1>Sign in</h1>
       <form action="" v-on:submit.prevent="onSubmit">
         <div class="signin__input-group">
@@ -35,8 +36,15 @@
 </template>
 
 <script>
+
 import signinStore from '@/store/index.js'
+import userMock from '@/infra/users/__mock__/Users.json'
 export default {
+  data () {
+    return {
+      users: userMock
+    }
+  },
   methods: {
     backBehaviour () {
       this.$router.go(-1)

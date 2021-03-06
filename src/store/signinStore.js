@@ -1,3 +1,5 @@
+import UserRepository from '@/infra/users/UserRepository'
+
 export default {
   state: {
     isSigned: false,
@@ -10,6 +12,10 @@ export default {
     }
   },
   actions: {
+    getUsers({ commit }) {
+      const userData = UserRepository.getUsers()
+      commit('setSignedUser', userData)
+    }
   },
   getters: {
     isSigned(state) {
