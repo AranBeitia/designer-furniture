@@ -4,25 +4,20 @@
     <router-link to="/" class="menu__item">About us</router-link>
     <router-link to="/" class="menu__item">Contact</router-link>
     <router-link to="/" class="menu__item">Stores</router-link>
-    <button
+    <router-link
       v-if="isActived"
-      @click="signin"
+      :to="{ name: 'Signin' }"
       class="[ button --small ]"
-    >Sign in</button>
+    >Sign in</router-link>
   </nav>
 </template>
 <script>
-import signinStore from '@/store/index.js'
+
 
 export default {
   props: {
     isActived: {
       type: Boolean
-    }
-  },
-  methods: {
-    signin () {
-      signinStore.commit('setSignedUser', { userName: 'aran' })
     }
   }
 }

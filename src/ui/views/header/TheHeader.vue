@@ -21,7 +21,11 @@
         v-if="menuVisible"
         :isActived="isActived"/>
     </div>
-    <span>{{ userName }}</span>
+    <p
+      v-if="isSigned"
+      class="text-body-main"
+    >Hello <span class="text-body-main-bold">{{ userName }}</span>
+    </p>
     <div class="z-index-1">
       <button
         @click="toggleMenu"
@@ -33,7 +37,8 @@
       <router-link
         v-if="menuVisible"
         :to="{ name: 'Signin' }"
-        class="sign-in"
+        class="signed"
+        :class="{'--signout': isSigned }"
       >Sign in</router-link>
     </div>
   </header>
@@ -58,7 +63,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['userName'])
+    ...mapGetters(['userName', 'isSigned'])
   },
   methods: {
     toggleMenu () {
@@ -116,11 +121,16 @@ $size: 2rem;
     }
   }
 
-  .sign-in {
+  .signed {
+    display: block;
     color: var( --color-tertiary);
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: underline;
+
+    &.--signout {
+      display: none;
+    }
 
     @include is-tablet {
       display: none;

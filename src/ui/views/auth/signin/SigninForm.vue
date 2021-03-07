@@ -38,7 +38,6 @@
 </template>
 
 <script>
-
 import signinStore from '@/store/index.js'
 import userMock from '@/infra/users/__mock__/Users.json'
 export default {
@@ -52,7 +51,7 @@ export default {
       this.$router.go(-1)
     },
     signin () {
-      signinStore.commit('setSignedUser', { userName: 'aran' })
+      signinStore.commit('setSignedUser', { userName: 'Aran' })
       this.$router.push({ name: 'Home' })
     }
   }
