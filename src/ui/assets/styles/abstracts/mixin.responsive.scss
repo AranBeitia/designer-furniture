@@ -1,7 +1,7 @@
 //BREAKPOINTS
 $breakpoint-xs: 480px;
 $breakpoint-sm: 786px;
-$breakpoint-md: 1440px;
+$breakpoint-md: 1200px;
 
 @mixin is-mobile() {
   @media screen and (max-width: $breakpoint-xs) { @content; }

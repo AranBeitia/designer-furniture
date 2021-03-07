@@ -1,9 +1,9 @@
 @import 'base/reset';
 
 @import 'tokens/tokens';
+@import 'icons/icons';
 @import 'abstracts/mixin.responsive';
 @import 'abstracts/mixin.flexbox';
-@import 'abstracts/mixin.color-dot';
 
 @import 'base/typography';
 @import 'base/default';
@@ -13,3 +13,5 @@
 @import 'layout/grid';
 
 @import 'components/button';
+
+@import 'utils/utils';

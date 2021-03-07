@@ -1,10 +1,12 @@
 <template>
   <main class="signin">
     <article class="signin__card">
-      <button @click="backBehaviour"> - go back</button>
-      {{ users }}
+      <button @click="backBehaviour" class="back-button">
+        <i class="back-button__icon woo-icon-arrow"></i>
+        <span class="back-button__text">Go back</span>
+      </button>
       <h1>Sign in</h1>
-      <form action="" v-on:submit.prevent="onSubmit">
+      <form v-on:submit.prevent="onSubmit">
         <div class="signin__input-group">
           <label
             for="name"
@@ -58,8 +60,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.back-button {
+  @include flex(flex, center, center);
+  padding: 2rem 0;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+
+  &__icon {
+    font-size: 2rem;
+    padding-right: 1.5rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+  }
+}
+
 .signin {
-  padding: 9rem;
+  padding: 7rem;
   background-color: var(--color-grey-light);
 
   @include is-mobile {

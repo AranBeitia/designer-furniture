@@ -1,4 +1,4 @@
-import ProductsRepository from '@/infra/bestSellers/ProductsRepository'
+import ProductsRepository from '@/infra/product/ProductRepository'
 export default {
   state: {
     products: [],
