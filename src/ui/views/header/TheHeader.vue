@@ -1,7 +1,7 @@
 <template>
   <header class="header page-container">
     <div class="header__nav">
-      <router-link :to="{ name: 'Home' }">
+      <router-link :to="{ name: 'Home' }" class="z-index-2">
         <img
           src="~@/ui/assets/images/logo_black.png"
           alt="logo"
@@ -22,10 +22,10 @@
         :isActived="isActived"/>
     </div>
     <span>{{ userName }}</span>
-    <div class="header__cta">
+    <div class="z-index-1">
       <button
         @click="toggleMenu"
-        class="toggle"
+        class="button-toggle"
         :class="{ '--active': isActived }"
       >
         <i class="icon woo-icon-bars" :class="{ 'woo-icon-cross': isActived }"></i>
@@ -68,16 +68,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$size: 2rem;
 .header {
-  padding: 2rem 0;
+  padding: $size 0;
   @include flex(flex, between, center);
 
   &__nav {
     @include flex(flex, start, center);
-  }
-
-  &__cta {
-    z-index: 1;
   }
 
   &__logo {
@@ -90,22 +87,28 @@ export default {
     &.--active {
       display: block;
       position: absolute;
-      top: 1;
-      left: 1;
-      z-index: 1;
+      top: $size;
+      left: $size;
     }
   }
 
-  .toggle {
+  .button-toggle {
     display: none;
     outline: none;
 
       @include is-tablet {
       display: block;
+      background-color: transparent;
+    }
+
+    &.--active {
+      .icon {
+        color: var(--color-white);
+      }
     }
 
     .icon {
-      font-size: 4rem;
+      font-size: $size;
     }
   }
 
