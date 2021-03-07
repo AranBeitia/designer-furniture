@@ -40,7 +40,7 @@ $full-size: 100%;
     &.--active {
       @include flex(flex, center, center);
       flex-direction: column;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: $full-size;

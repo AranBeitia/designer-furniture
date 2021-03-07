@@ -86,7 +86,7 @@ $size: 2rem;
 
     &.--active {
       display: block;
-      position: absolute;
+      position: fixed;
       top: $size;
       left: $size;
     }
@@ -103,6 +103,10 @@ $size: 2rem;
 
     &.--active {
       .icon {
+        $size: 2.5rem;
+        position: fixed;
+        top: $size;
+        right: $size;
         color: var(--color-white);
       }
     }
