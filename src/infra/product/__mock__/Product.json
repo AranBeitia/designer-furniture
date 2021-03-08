@@ -8,7 +8,7 @@
       "option1": "rgba(159, 120, 75, 1)",
       "option2": "rgba(0, 0, 0, 1)"
     },
-    "image": "http://cdn.arantzabeitia.es/table.png"
+    "image": "/img/table.bc1fa64f.png"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
       "option1": "rgba(146, 146, 146, 1)",
       "option2": "rgba(181, 108, 57, 1)"
     },
-    "image": "http://cdn.arantzabeitia.es/chair_grey.png"
+    "image": "/img/chair_grey.2ad99ad9.png"
   },
   {
     "id": 3,
@@ -30,6 +30,6 @@
       "option1": "rgba(234, 221, 111, 1)",
       "option2": "rgba(146, 146, 146, 1)"
     },
-    "image": "http://cdn.arantzabeitia.es/chair_yellow.png"
+    "image": "/img/chair_yellow.6bec3d26.png"
   }
 ]
