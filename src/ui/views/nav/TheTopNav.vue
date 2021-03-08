@@ -25,7 +25,7 @@ export default {
 $size: 3rem;
 $full-size: 100%;
 .menu {
-  padding: 0 $size * 2;
+  padding: 0 4rem;
   z-index: 1;
 
   @include is-tablet {

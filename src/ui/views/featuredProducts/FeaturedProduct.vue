@@ -21,13 +21,15 @@
 </template>
 
 <script>
-import productMock from '@/infra/featuredProduct/__mock__/FeaturedProduct.json'
-
+import productRepo from '@/infra/featuredProduct/FeaturedProductRepository.js'
 export default {
   data () {
     return {
-      products: productMock
+      products: []
     }
+  },
+  created () {
+    productRepo.getFeaturedProducts().then(products => { this.products = products })
   }
 }
 </script>

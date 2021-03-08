@@ -31,7 +31,6 @@
 
 <script>
 import productRepo from '@/infra/product/ProductRepository.js'
-
 export default {
   data() {
     return {
@@ -39,7 +38,7 @@ export default {
     }
   },
   created () {
-    productRepo.getProducts().then(products => {this.products = products} )
+    productRepo.getProducts().then(products => { this.products = products })
   }
 }
 </script>

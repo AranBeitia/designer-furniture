@@ -1,6 +1,5 @@
 import { createStore } from 'vuex'
 import signin from '@/store/signinStore'
-import product from '@/store/productStore.js'
 
 export default createStore({
   state: {
@@ -10,7 +9,6 @@ export default createStore({
   actions: {
   },
   modules: {
-    signin,
-    product
+    signin
   }
 })
