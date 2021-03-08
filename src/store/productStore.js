@@ -1,20 +1,25 @@
 import ProductsRepository from '@/infra/product/ProductRepository'
 export default {
   state: {
-    products: [],
+    products: ['hello'],
     namespaced: true
   },
   mutations: {
-    setProduct(state, product) {
-      state.products = product
+    setProducts(state, products) {
+      console.log(products)
+      state.product = products
     }
   },
   actions: {
     async getProduct({ commit }) {
       const dataProduct = await ProductsRepository.getProducts()
-      commit('setProduct', dataProduct)
+      commit('setProducts', dataProduct)
     }
   },
   getters: {
+    products(state) {
+      console.log(state.products)
+      return state.products
+    }
   }
 }

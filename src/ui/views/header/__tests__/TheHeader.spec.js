@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
-import TheFooter from '@/ui/views/footer/TheFooter'
+import TheHeader from '@/ui/views/header/TheHeader'
 
 describe('The Footer', () => {
   it('passes the sanity check and creates a wrapper', () => {
-    const wrapper = shallowMount(TheFooter)
+    const wrapper = shallowMount(TheHeader)
     expect(wrapper.exists()).toBe(true)
   })
 })

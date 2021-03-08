@@ -30,13 +30,16 @@
 </template>
 
 <script>
-import productMock from '@/infra/product/__mock__/Product.json'
+import productRepo from '@/infra/product/ProductRepository.js'
 
 export default {
-  data () {
+  data() {
     return {
-      products: productMock
+      products: []
     }
+  },
+  created () {
+    productRepo.getProducts().then(products => {this.products = products} )
   }
 }
 </script>
