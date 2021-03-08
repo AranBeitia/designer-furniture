@@ -11,9 +11,8 @@
     >Sign in</router-link>
   </nav>
 </template>
+
 <script>
-
-
 export default {
   props: {
     isActived: {

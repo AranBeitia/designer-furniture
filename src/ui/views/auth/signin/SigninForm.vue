@@ -16,6 +16,7 @@
             type="text"
             name="name"
             id="name"
+            v-model="name"
             class="signin__input"
           />
         </div>
@@ -28,6 +29,7 @@
             type="password"
             name="password"
             id="password"
+            v-model="password"
             class="signin__input"
           />
         </div>
@@ -43,7 +45,9 @@ import userMock from '@/infra/users/__mock__/Users.json'
 export default {
   data () {
     return {
-      users: userMock
+      users: userMock,
+      name: '',
+      password: ''
     }
   },
   methods: {
@@ -51,7 +55,7 @@ export default {
       this.$router.go(-1)
     },
     signin () {
-      signinStore.commit('setSignedUser', { userName: 'Aran' })
+      signinStore.commit('setSignedUser', { userName: this.name })
       this.$router.push({ name: 'Home' })
     }
   }
