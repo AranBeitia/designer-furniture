@@ -4,13 +4,13 @@
     "title": "Sofa blue",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione corporis placeat quas sit eius voluptatum ullam officia fugit.",
     "price": "3.000€",
-    "image": "/img/sofa_blue.15aac8b3.jpg"
+    "image": "http://cdn.arantzabeitia.es/sofa_blue.jpg"
   },
   {
     "id": 2,
     "title": "Sofa grey",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione corporis placeat quas sit eius voluptatum ullam officia fugit.",
     "price": "5.000€",
-    "image": "/img/sofa_grey.82ce4b0d.jpg"
+    "image": "http://cdn.arantzabeitia.es/sofa_grey.jpg"
   }
 ]
